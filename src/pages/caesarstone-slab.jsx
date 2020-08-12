@@ -1,26 +1,17 @@
-import * as React from "react"
-import {
-  Container,
-  Grid,
-  Paper,
-  Typography,
-  makeStyles,
-} from "@material-ui/core"
-import { Layout } from "../components"
+import { Grid, Typography } from "@material-ui/core"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import { Hero } from "../components"
-import { H2Title, H2Subtitle } from "../../elements"
-
-const useStyles = makeStyles(theme => ({
-  paperStyles: {
-    margin: theme.spacing(0, 0, 2),
-  },
-}))
+import * as React from "react"
+import {
+  ContainterMdMt,
+  ContainterSmMt,
+  H2Subtitle,
+  H2Title,
+  ImageContainer,
+} from "../../elements"
+import { ColourWarning, Hero, Layout, MainCTA } from "../components"
 
 const CaesarstoneSlab = ({ data }) => {
-  const classes = useStyles()
-
   return (
     <Layout>
       <Hero
@@ -29,241 +20,251 @@ const CaesarstoneSlab = ({ data }) => {
         buttonText="Explore"
         imageSource={data.calacattaNuvoHero.childImageSharp.fluid}
       />
-      <Container maxWidth="md">
+      {/* Start - Caesarstone Colour */}
+      <ContainterMdMt>
         <H2Title>Caesarstone Colour</H2Title>
         <H2Subtitle>All 32 Colours Available In Malaysia</H2Subtitle>
         <Grid container justify="center" spacing={5}>
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.pureWhite.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">1141 | Pure White</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.snow.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">2141 | Snow</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.jetBlack.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">3100 | Jet Black</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.freshConcrete.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">4001 | Fresh Concrete</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.cloudburstConcrete.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">4011 | Cloudburst Concrete</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.topusConcrete.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">4023 | Topus Concrete</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.oyster.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">4030 | Oyster</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.ruggedConcrete.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">4033 | Rugged Concrete</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.airyConcrete.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">4044 | Airy Concrete</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.raven.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">4120 | Raven</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.clamshell.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">4130 | Clamshell</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.buttermilk.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">4220 | Buttermilk</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.shitake.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">4230 | Shitake</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.ginger.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">4330 | Ginger</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.mink.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">4350 | Mink</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.organicWhite.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">4600 | Organic White</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.frozenTerra.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">4601 | Frozen Terra</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.piatraGrey.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">5003 | Piatra Grey</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.statuarioMaximus.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">5031 | Statuario Maximus</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.montblanc.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">5043 | Montblanc</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.vanillaNoir.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">5100 | Vanilla Noir</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.calacattaNuvo.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">5131 | Calacatta Nuvo</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.symphonyGrey.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">5133 | Symphony Grey</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.frostyCarrina.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">5141 | Frosty Carrina</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.whiteAttica.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">5143 | White Attica</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.intenseWhite.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">6011 | Intense White</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.nordicLoft.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">6041 | Nordic Loft</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.moorlandFog.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">6046 | Moorland Fog</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.nightSky.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">6100 | Night Sky</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.biancoDrift.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">6131 | Bianco Drift</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.turbineGrey.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">6313 | Turbine Grey</Typography>
           </Grid>
 
           <Grid item xs={12} sm={10}>
-            <Paper elevation={4} className={classes.paperStyles}>
+            <ImageContainer>
               <Img fluid={data.woodlands.childImageSharp.fluid} />
-            </Paper>
+            </ImageContainer>
             <Typography align="center">6338 | Woodlands</Typography>
           </Grid>
         </Grid>
-      </Container>
+      </ContainterMdMt>
+      {/* End - Caesarstone Colour */}
+      <ContainterSmMt>
+        <ColourWarning />
+      </ContainterSmMt>
+
+      <ContainterMdMt>
+        <MainCTA />
+      </ContainterMdMt>
     </Layout>
   )
 }
 
 export default CaesarstoneSlab
 
+// Caesarstone Colour GraphQL
 export const data = graphql`
   query {
     pureWhite: file(relativePath: { eq: "classico-colour/cs1141.jpg" }) {

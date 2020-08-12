@@ -1,6 +1,13 @@
 import * as React from "react"
 import BackgroundImage from "gatsby-background-image"
-import { Button, Grid, Typography, makeStyles, Box } from "@material-ui/core"
+import {
+  Container,
+  Button,
+  Grid,
+  Typography,
+  makeStyles,
+  Box,
+} from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
   heroStyles: {
@@ -18,7 +25,8 @@ const useStyles = makeStyles(theme => ({
     textDecoration: `none`,
   },
   buttonStyles: {
-    fontWeight: 700,
+    padding: theme.spacing(2, 5),
+    letterSpacing: theme.spacing(0.75),
   },
 }))
 
@@ -45,19 +53,24 @@ export const Hero = ({ title, subtitle, buttonText, idPath, imageSource }) => {
       >
         <Grid container item justify="center" alignItems="center">
           <Typography variant="h1" gutterBottom align="center" color="primary">
-            {title}
+            <Box px={1.5}>{title}</Box>
           </Typography>
         </Grid>
         <Grid container item justify="center" alignItems="center">
           <Typography variant="h3" align="center">
-            <Box mb={7} color="background.paper">
+            <Box mb={7} px={1.5} color="background.paper">
               {subtitle}
             </Box>
           </Typography>
         </Grid>
         <Grid container item justify="center" alignItems="center">
           <a href={`#${idPath}`} className={classes.anchorText}>
-            <Button variant="outlined" color="secondary" size="large">
+            <Button
+              variant="outlined"
+              color="secondary"
+              size="large"
+              className={classes.buttonStyles}
+            >
               {buttonText}
             </Button>
           </a>
