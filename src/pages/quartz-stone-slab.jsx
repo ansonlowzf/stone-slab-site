@@ -14,6 +14,7 @@ import {
 const QuartzStoneSlab = ({ data }) => {
   return (
     <Layout>
+      <SEO title="Quartz Stone Slab" />
       <Hero
         title="Quartz Stone Slab"
         subtitle="More Than 60 Colours &amp; 800 Slabs Ready Stock"

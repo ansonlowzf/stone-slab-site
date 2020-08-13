@@ -1,12 +1,13 @@
 import * as React from "react"
-import { Layout, Hero, MainCTA } from "../components"
+import { Layout, Hero, MainCTA, SEO } from "../components"
 import { Container, Typography, Grid } from "@material-ui/core"
 import { graphql } from "gatsby"
-import { ContainterMdMt, ContainterSmMt, H2Title } from "../../elements"
+import { ContainterMdMt, H2Title } from "../../elements"
 
 const Homepage = ({ data }) => {
   return (
     <Layout>
+      <SEO title="Home" />
       <Hero
         title="Supply Stones Slab &amp; Fabrication Tools"
         subtitle="To: Stone Factory | Stone Mason | Stone Fabricator"

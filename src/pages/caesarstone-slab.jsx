@@ -14,6 +14,7 @@ import { ColourWarning, Hero, Layout, MainCTA } from "../components"
 const CaesarstoneSlab = ({ data }) => {
   return (
     <Layout>
+      <SEO title="Caesarstone Slab" />
       <Hero
         title="Caesarstone Distributor"
         subtitle="Supply Caesarstone Slab To Stone Factory &amp; Fabricator"

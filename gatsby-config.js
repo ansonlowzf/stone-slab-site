@@ -1,11 +1,4 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
-  /* Your site config here */
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -17,4 +10,10 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
   ],
+  siteMetadata: {
+    title: `Stone Slab By Stone Innovations Enterprise`,
+    description: `Supply Quartz Stone, Granite & Marble Slab`,
+    author: `@Anson Low Z.F (zhanfaye@gmail.com)`,
+    siteUrl: ``,
+  },
 }
