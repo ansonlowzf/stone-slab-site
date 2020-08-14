@@ -61,6 +61,7 @@ const navLinks = [
   { title: `quartz stone`, path: `/quartz-stone-slab` },
   { title: `granite`, path: `/granite-slab` },
   { title: `tools`, path: `/fabrication-tools` },
+  { title: `faq`, path: `/faq` },
 ]
 
 export const Header = () => {

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Layout, Hero, MainCTA, SEO } from "../components"
-import { Typography, Grid } from "@material-ui/core"
+import { Typography, Grid, Paper } from "@material-ui/core"
 import { graphql } from "gatsby"
 import { ContainterMdMt, ContainterSmMt, H2Title } from "../../elements"
 
@@ -16,9 +16,9 @@ const Homepage = ({ data }) => {
         imageSource={data.wideAngleFactory.childImageSharp.fluid}
       />
       <ContainterSmMt>
-        <H2Title idPath="distributor">Stone Distributor</H2Title>
+        <H2Title idPath="distributor">About Us</H2Title>
         <Typography paragraph>
-          {`We distribute the following stone slabs & tools to the stone factory, stonemason, and stone fabricator in Malaysia.`}
+          {`We are specializing in distributing the following stone slabs & tools to the stone factory, stonemason, and stone fabricator in Malaysia.`}
           <ul>
             <li>
               Natural Stone -{" "}
@@ -55,21 +55,23 @@ const Homepage = ({ data }) => {
 
       <ContainterMdMt>
         <H2Title>Warehouse</H2Title>
-        <Grid container justify="center">
-          <iframe
-            title="quartz stone slab warehouse walkthrough"
-            style={{
-              position: `relative`,
-              width: `100%`,
-              height: `500px`,
-            }}
-            src="https://www.youtube.com/embed/n_aPfgbuSDA"
-            scrolling="no"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullFcreen
-          ></iframe>{" "}
-        </Grid>
+        <Paper elevation={4}>
+          <Grid container justify="center">
+            <iframe
+              title="quartz stone slab warehouse walkthrough"
+              style={{
+                position: `relative`,
+                width: `100%`,
+                height: `500px`,
+              }}
+              src="https://www.youtube.com/embed/n_aPfgbuSDA"
+              scrolling="no"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullFcreen
+            ></iframe>{" "}
+          </Grid>
+        </Paper>
       </ContainterMdMt>
 
       <ContainterMdMt>

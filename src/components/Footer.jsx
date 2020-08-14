@@ -11,7 +11,7 @@ export const Footer = () => {
     >
       <Typography align="center">
         <Box color="background.paper">
-          © 2013 - {new Date().getFullYear()}, Your Company Name
+          © 2013 - {new Date().getFullYear()}, Stone Innovations Enterprise
         </Box>
       </Typography>
     </Box>
