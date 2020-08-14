@@ -1,7 +1,7 @@
 export const FaqStoneDistributor = [
   {
     question: `What is the quartz stone slab size?`,
-    answer: `Depend on colour. There are 2 options. 3050 mm x 1440 mm or 3200 mm x 1600 mm approximately.`,
+    answer: `Depend on colour. There are 2 options. 3040 mm x 1440 mm or 3200 mm x 1600 mm approximately. We encourage you to visit our factory to see the actual size and colour.`,
   },
   {
     question: `What is the thickness of the quartz stone?`,
