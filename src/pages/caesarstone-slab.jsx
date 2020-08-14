@@ -9,7 +9,7 @@ import {
   H2Title,
   ImageContainer,
 } from "../../elements"
-import { ColourWarning, Hero, Layout, MainCTA } from "../components"
+import { ColourWarning, Hero, Layout, MainCTA, SEO } from "../components"
 
 const CaesarstoneSlab = ({ data }) => {
   return (

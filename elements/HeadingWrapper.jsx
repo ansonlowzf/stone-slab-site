@@ -1,19 +1,43 @@
-import { Box, Typography } from "@material-ui/core"
+import { Box, Grid, Typography, makeStyles } from "@material-ui/core"
 import * as React from "react"
 
-export const H2Title = ({ children }) => {
+const useStyles = makeStyles(theme => ({
+  H2wMarginTop: {
+    marginTop: theme.spacing(15),
+    [theme.breakpoints.down("md")]: {
+      marginTop: theme.spacing(10),
+    },
+  },
+  H2TitleMB: {
+    marginBottom: theme.spacing(6),
+  },
+  textUnderline: {
+    borderBottom: `2px solid grey`,
+    paddingBottom: theme.spacing(2),
+  },
+}))
+
+export const H2Title = ({ children, useMarginTop }) => {
+  const classes = useStyles()
+
   return (
-    <Box mb={6} align="center">
+    <Grid
+      container
+      item
+      justify="center"
+      className={`${useMarginTop ? classes.H2wMarginTop : null} ${
+        classes.H2TitleMB
+      }`}
+    >
       <Typography
         variant="h2"
         align="center"
-        display="inline"
         gutterBottom
-        style={{ borderBottom: `2px solid grey` }}
+        className={classes.textUnderline}
       >
         {children}
       </Typography>
-    </Box>
+    </Grid>
   )
 }
 

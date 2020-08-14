@@ -1,4 +1,4 @@
-import { Avatar, Box, Typography, Grid } from "@material-ui/core"
+import { Avatar, Box, Typography } from "@material-ui/core"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import * as React from "react"

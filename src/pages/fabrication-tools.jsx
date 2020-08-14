@@ -1,9 +1,9 @@
-import * as React from "react"
-import { Box, Container, Grid, Typography, Paper } from "@material-ui/core"
+import { Box, Container, Typography } from "@material-ui/core"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import { Layout } from "../components"
+import * as React from "react"
 import { ImageContainer } from "../../elements"
+import { Layout, SEO } from "../components"
 
 const fabricationTools = ({ data }) => {
   return (

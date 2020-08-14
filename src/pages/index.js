@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Layout, Hero, MainCTA, SEO } from "../components"
-import { Container, Typography, Grid } from "@material-ui/core"
+import { Typography, Grid } from "@material-ui/core"
 import { graphql } from "gatsby"
-import { ContainterMdMt, H2Title } from "../../elements"
+import { ContainterMdMt, ContainterSmMt, H2Title } from "../../elements"
 
 const Homepage = ({ data }) => {
   return (
@@ -10,14 +10,14 @@ const Homepage = ({ data }) => {
       <SEO title="Home" />
       <Hero
         title="Supply Stones Slab &amp; Fabrication Tools"
-        subtitle="To: Stone Factory | Stone Mason | Stone Fabricator"
+        subtitle="To: Stone Factory, Stone Mason, Stone Fabricator"
         buttonText="Explore"
         imageSource={data.wideAngleFactory.childImageSharp.fluid}
       />
-      <H2Title>Stone Slab Distributor</H2Title>
-      <Container maxWidth="sm">
+      <ContainterSmMt>
+        <H2Title>Stone Distributor</H2Title>
         <Typography paragraph>
-          {`We distribute and supply the following stone material & tools to the stone factory, stonemason, and stone fabricator in Malaysia.`}
+          {`We distribute the following stone slabs & tools to the stone factory, stonemason, and stone fabricator in Malaysia.`}
           <ul>
             <li>
               Natural Stone -{" "}
@@ -50,7 +50,7 @@ const Homepage = ({ data }) => {
         <Typography component="p" variant="h6">
           {`Grow Your Stone Business With Us`}
         </Typography>
-      </Container>
+      </ContainterSmMt>
 
       <ContainterMdMt>
         <H2Title>Warehouse</H2Title>

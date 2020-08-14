@@ -1,21 +1,8 @@
-import * as React from "react"
+import { Box, Button, Grid, makeStyles, Typography } from "@material-ui/core"
 import BackgroundImage from "gatsby-background-image"
-import {
-  Container,
-  Button,
-  Grid,
-  Typography,
-  makeStyles,
-  Box,
-} from "@material-ui/core"
+import * as React from "react"
 
 const useStyles = makeStyles(theme => ({
-  heroStyles: {
-    marginBottom: theme.spacing(10),
-    [theme.breakpoints.up("md")]: {
-      marginBottom: theme.spacing(15),
-    },
-  },
   filterLayer: {
     width: `100%`,
     height: `100%`,
@@ -42,23 +29,21 @@ export const Hero = ({ title, subtitle, buttonText, idPath, imageSource }) => {
         backgroundSize: `cover`,
         height: `90vh`,
       }}
-      className={classes.heroStyles}
     >
       <Grid
-        container
         direction="column"
+        container
         justify="center"
-        alignItems="center"
         className={classes.filterLayer}
       >
         <Grid container item justify="center" alignItems="center">
           <Typography variant="h1" gutterBottom align="center" color="primary">
-            <Box px={1.5}>{title}</Box>
+            <Box px={2}>{title}</Box>
           </Typography>
         </Grid>
         <Grid container item justify="center" alignItems="center">
           <Typography variant="h3" align="center">
-            <Box mb={7} px={1.5} color="background.paper">
+            <Box pb={7} px={2} color="background.paper">
               {subtitle}
             </Box>
           </Typography>

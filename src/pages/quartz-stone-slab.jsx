@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Layout, Hero, ColourWarning, MainCTA } from "../components"
+import { Layout, Hero, ColourWarning, MainCTA, SEO } from "../components"
 import { Grid, Typography } from "@material-ui/core"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"

@@ -20,11 +20,14 @@ export const ContainterLgMt = ({ children }) => {
   )
 }
 
-export const ContainterMdMt = ({ children }) => {
+export const ContainterMdMt = ({ children, noMarginTop }) => {
   const classes = useStyles()
 
   return (
-    <Container maxWidth="md" className={classes.containerMt}>
+    <Container
+      maxWidth="md"
+      className={noMarginTop ? null : classes.containerMt}
+    >
       {children}
     </Container>
   )
