@@ -1,9 +1,17 @@
 import React from "react"
-import { Card, CardContent, Typography } from "@material-ui/core"
+import { Card, CardContent, Typography, makeStyles } from "@material-ui/core"
+
+const useStyles = makeStyles(theme => ({
+  containerPaddingStyles: {
+    padding: theme.spacing(5),
+  },
+}))
 
 export const ColourWarning = () => {
+  const classes = useStyles()
+
   return (
-    <Card>
+    <Card className={classes.containerPaddingStyles}>
       <CardContent>
         <Typography component="p" variant="h6" paragraph color="error">
           Important Note

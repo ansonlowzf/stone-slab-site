@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export const H2Title = ({ children, useMarginTop }) => {
+export const H2Title = ({ children, useMarginTop, idPath }) => {
   const classes = useStyles()
 
   return (
@@ -32,6 +32,7 @@ export const H2Title = ({ children, useMarginTop }) => {
       <Typography
         variant="h2"
         align="center"
+        id={idPath}
         gutterBottom
         className={classes.textUnderline}
       >

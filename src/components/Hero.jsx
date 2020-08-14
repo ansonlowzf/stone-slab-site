@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export const Hero = ({ title, subtitle, buttonText, idPath, imageSource }) => {
+export const Hero = ({ title, subtitle, buttonText, toId, imageSource }) => {
   const classes = useStyles()
 
   return (
@@ -49,7 +49,7 @@ export const Hero = ({ title, subtitle, buttonText, idPath, imageSource }) => {
           </Typography>
         </Grid>
         <Grid container item justify="center" alignItems="center">
-          <a href={`#${idPath}`} className={classes.anchorText}>
+          <a href={`#${toId}`} className={classes.anchorText}>
             <Button
               variant="outlined"
               color="secondary"

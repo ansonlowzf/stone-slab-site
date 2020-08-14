@@ -19,11 +19,12 @@ const CaesarstoneSlab = ({ data }) => {
         title="Caesarstone Distributor"
         subtitle="Supply Caesarstone Slab To Stone Factory &amp; Fabricator"
         buttonText="Explore"
+        toId="colour"
         imageSource={data.calacattaNuvoHero.childImageSharp.fluid}
       />
       {/* Start - Caesarstone Colour */}
       <ContainterMdMt>
-        <H2Title>Caesarstone Colour</H2Title>
+        <H2Title idPath="colour">Caesarstone Colour</H2Title>
         <H2Subtitle>All 32 Colours Available In Malaysia</H2Subtitle>
         <Grid container justify="center" spacing={5}>
           <Grid item xs={12} sm={10}>

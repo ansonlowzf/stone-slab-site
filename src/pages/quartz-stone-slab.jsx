@@ -18,11 +18,12 @@ const QuartzStoneSlab = ({ data }) => {
       <Hero
         title="Quartz Stone Slab"
         subtitle="More Than 60 Colours &amp; 800 Slabs Ready Stock"
+        toId="colour"
         buttonText="Explore"
         imageSource={data.calacattaZen.childImageSharp.fluid}
       />
       <ContainterLgMt>
-        <H2Title>Colour Options</H2Title>
+        <H2Title idPath="colour">Colour Options</H2Title>
         <Grid container spacing={2} justify="center">
           <Grid item xs={6} md={3}>
             <ImageContainer>

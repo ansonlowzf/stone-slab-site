@@ -19,10 +19,11 @@ const graniteSlab = ({ data }) => {
         title="Granite Slab"
         subtitle="Supply Granite Slab To Stone Factory &amp; Fabricator"
         buttonText="Explore"
+        toId="colour"
         imageSource={data.bluepearlHero.childImageSharp.fluid}
       />
       <ContainterLgMt>
-        <H2Title>Colour Options</H2Title>
+        <H2Title idPath="colour">Colour Options</H2Title>
         <Grid container spacing={2} justify="center">
           <Grid item xs={12} sm={8}>
             <ImageContainer>

@@ -1,0 +1,10 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.iframe-match-parent-width {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 1em;
+}

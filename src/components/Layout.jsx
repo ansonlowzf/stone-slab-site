@@ -7,6 +7,7 @@ import {
 } from "@material-ui/core"
 import { blue, orange } from "@material-ui/core/colors"
 import { Header, Footer } from "../components"
+import "../../styles/global.css"
 
 let theme = createMuiTheme({
   palette: {

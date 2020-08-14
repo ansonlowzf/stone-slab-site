@@ -12,30 +12,31 @@ const Homepage = ({ data }) => {
         title="Supply Stones Slab &amp; Fabrication Tools"
         subtitle="To: Stone Factory, Stone Mason, Stone Fabricator"
         buttonText="Explore"
+        toId="distributor"
         imageSource={data.wideAngleFactory.childImageSharp.fluid}
       />
       <ContainterSmMt>
-        <H2Title>Stone Distributor</H2Title>
+        <H2Title idPath="distributor">Stone Distributor</H2Title>
         <Typography paragraph>
           {`We distribute the following stone slabs & tools to the stone factory, stonemason, and stone fabricator in Malaysia.`}
           <ul>
             <li>
               Natural Stone -{" "}
-              <Typography color="primary" display="inline">
+              <Typography component="span" color="primary" display="inline">
                 Granite
               </Typography>
               , {` `}
-              <Typography color="primary" display="inline">
+              <Typography component="span" color="primary" display="inline">
                 Marble
               </Typography>
             </li>
             <li>
               Engineered Stone -{" "}
-              <Typography color="primary" display="inline">
+              <Typography component="span" color="primary" display="inline">
                 Quartz Stone
               </Typography>
               ,{" "}
-              <Typography color="primary" display="inline">
+              <Typography component="span" color="primary" display="inline">
                 Porcelain Slab
               </Typography>
             </li>
