@@ -28,6 +28,13 @@ module.exports = {
         crossOrigin: `use-credentials`,
       },
     },
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        trackingId: `UA-112015406-5`,
+        head: true,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
