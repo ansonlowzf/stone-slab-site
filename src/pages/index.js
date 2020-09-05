@@ -1,49 +1,46 @@
 import * as React from "react"
-import { Layout, Hero, MainCTA, SEO } from "../components"
-import { Typography, Grid, Paper } from "@material-ui/core"
+import { Layout, Hero, MainCTA, SEO, ProductCard } from "../components"
+import {
+  Typography,
+  Grid,
+  Paper,
+  List,
+  ListItem,
+  ListItemText,
+} from "@material-ui/core"
 import { graphql } from "gatsby"
 import { ContainterMdMt, ContainterSmMt, H2Title } from "../../elements"
 
 const Homepage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Stone Distributor Malaysia" />
       <Hero
-        title="Supply Stones Slab &amp; Fabrication Tools"
-        subtitle="To: Stone Factory, Stone Mason, Stone Fabricator"
+        title="Stone Distributor Malaysia"
+        subtitle="Specializing In Stone Slab Distribution"
         buttonText="Explore"
         toId="distributor"
         imageSource={data.wideAngleFactory.childImageSharp.fluid}
       />
       <ContainterSmMt>
         <H2Title idPath="distributor">About Us</H2Title>
-        <Typography paragraph>
-          {`We are specializing in distributing the following stone slabs & tools to the stone factory, stonemason, and stone fabricator in Malaysia.`}
-          <ul>
-            <li>
-              Natural Stone -{" "}
-              <Typography component="span" color="primary" display="inline">
-                Granite
-              </Typography>
-              , {` `}
-              <Typography component="span" color="primary" display="inline">
-                Marble
-              </Typography>
-            </li>
-            <li>
-              Engineered Stone -{" "}
-              <Typography component="span" color="primary" display="inline">
-                Quartz Stone
-              </Typography>
-              ,{" "}
-              <Typography component="span" color="primary" display="inline">
-                Porcelain Slab
-              </Typography>
-            </li>
-            <li>Fabrication Tools - Polisher, Marble Glue</li>
-            <li>Machines Tools - Cutter Blade</li>
-          </ul>
+        <Typography gutterBottom>
+          {`We import the following stone slab from China, Spain, & US and distribute in Malaysia.`}
         </Typography>
+        <List>
+          <ListItem disableGutters>
+            <ListItemText primary="Natural Stone - Granite, Marble, Agate Stone" />
+          </ListItem>
+          <ListItem disableGutters>
+            <ListItemText primary="Engineered Stone - Quartz Stone, Porcelain Slab, Ultra-Compact Stone" />
+          </ListItem>
+          <ListItem disableGutters>
+            <ListItemText primary="Fabrication Tools - Polisher, Marble Glue" />
+          </ListItem>
+          <ListItem disableGutters>
+            <ListItemText primary="Machines Tools - Cutter Blade" />
+          </ListItem>
+        </List>
         <Typography paragraph>
           {`With more than 800 stone slabs ready-stock in our Klang Valley's warehouse.
           Check out factory video to see our ready-stock stone material.`}
@@ -75,6 +72,39 @@ const Homepage = ({ data }) => {
       </ContainterMdMt>
 
       <ContainterMdMt>
+        <H2Title>Stone</H2Title>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={4}>
+            <ProductCard
+              stone="Granite"
+              linkURL="/granite-slab"
+              stoneDescription="7 popular shades to choose from"
+              imgSource={data.bluePearl.childImageSharp.fluid}
+              altText="Granite Blue Pearl"
+            />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <ProductCard
+              stone="Quartz Stone"
+              linkURL="/quartz-stone-slab"
+              stoneDescription="More than 60 colour to choose from"
+              imgSource={data.bluePearl.childImageSharp.fluid}
+              altText="Quartz Stone"
+            />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <ProductCard
+              stone="Caesarstone"
+              linkURL="/caesarstone-slab"
+              stoneDescription="More than 32 colour to choose from"
+              imgSource={data.bluePearl.childImageSharp.fluid}
+              altText="Caesarstone"
+            />
+          </Grid>
+        </Grid>
+      </ContainterMdMt>
+
+      <ContainterMdMt>
         <MainCTA />
       </ContainterMdMt>
     </Layout>
@@ -86,6 +116,13 @@ export default Homepage
 export const data = graphql`
   query {
     wideAngleFactory: file(relativePath: { eq: "wide-angle-factory.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    bluePearl: file(relativePath: { eq: "granite/blue-pearl.JPG" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
