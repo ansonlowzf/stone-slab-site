@@ -8,3 +8,7 @@ html {
   height: 300px;
   margin-bottom: 1em;
 }
+
+.active {
+  opacity: 1;
+}

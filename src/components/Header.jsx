@@ -6,13 +6,13 @@ import {
   Drawer,
   Fab,
   Toolbar,
-  Slide,
   useScrollTrigger,
   IconButton,
   Hidden,
   List,
   ListItem,
   ListItemText,
+  Typography,
   makeStyles,
   Zoom,
 } from "@material-ui/core"
@@ -20,18 +20,24 @@ import { Home, Menu, KeyboardArrowUp } from "@material-ui/icons"
 import { Link } from "gatsby"
 
 const useStyles = makeStyles(theme => ({
-  styleNavbar: {
+  toolbarContainer: {
+    ...theme.mixins.toolbar,
+  },
+  homeIconStyle: {
+    opacity: 0.7,
+    color: theme.palette.common.white,
+  },
+  navbarDisplayStyles: {
     display: `flex`,
     justifyContent: `space-between`,
   },
-  styleMainNav: {
-    display: "flex",
-    justifyContent: `space-between`,
-  },
-  styleLinkText: {
+  linkText: {
     textDecoration: "none",
-    textTransform: `uppercase`,
+    textTransform: `capitalize`,
+    letterSpacing: theme.spacing(0.2),
+    marginLeft: theme.spacing(5),
     color: theme.palette.common.white,
+    opacity: 0.7,
   },
   styleDrawer: {
     width: 250,
@@ -57,6 +63,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const navLinks = [
+  { title: `home`, path: `/` },
   { title: `caesarstone`, path: `/caesarstone-slab` },
   { title: `quartz stone`, path: `/quartz-stone-slab` },
   { title: `granite`, path: `/granite-slab` },
@@ -69,34 +76,34 @@ export const Header = () => {
 
   return (
     <>
-      <HideOnScroll>
+      <ElevationScroll>
         <AppBar position="fixed">
           <Toolbar>
-            <Container maxWidth="lg" className={classes.styleNavbar}>
+            <Container maxWidth="lg" className={classes.navbarDisplayStyles}>
               <IconButton>
-                <Link to="/">
+                <Link
+                  to="/"
+                  activeClassName="active"
+                  className={classes.homeIconStyle}
+                >
                   <Home fontSize="large" style={{ color: `white` }} />
                 </Link>
               </IconButton>
 
               <Hidden smDown>
-                <List
-                  component="nav"
-                  aria-label="main navigation"
-                  className={classes.styleMainNav}
-                >
-                  {navLinks.map(({ title, path }) => (
-                    <Link
-                      to={path}
-                      key={title}
-                      className={classes.styleLinkText}
-                    >
-                      <ListItem button>
-                        <ListItemText primary={title} />
-                      </ListItem>
-                    </Link>
+                <Toolbar component="nav" className={classes.mainNavStyles}>
+                  {navLinks.map(({ title, path }, index) => (
+                    <Typography key={`${title}${index}`} variant="button">
+                      <Link
+                        to={path}
+                        activeClassName="active"
+                        className={classes.linkText}
+                      >
+                        {title}
+                      </Link>
+                    </Typography>
                   ))}
-                </List>
+                </Toolbar>
               </Hidden>
 
               <Hidden mdUp>
@@ -105,8 +112,8 @@ export const Header = () => {
             </Container>
           </Toolbar>
         </AppBar>
-      </HideOnScroll>
-      <Toolbar id="back-to-top-anchor" />
+      </ElevationScroll>
+      <Toolbar id="back-to-top-anchor" className={classes.toolbarContainer} />
 
       <BackToTop>
         <Fab color="secondary" size="large" aria-label="scroll back to top">
@@ -116,15 +123,18 @@ export const Header = () => {
     </>
   )
 }
-// Hide On Scroll Component
-export const HideOnScroll = ({ children }) => {
-  const trigger = useScrollTrigger()
-  return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {children}
-    </Slide>
-  )
+
+export const ElevationScroll = ({ children }) => {
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+  })
+
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  })
 }
+
 // Back To Top Component
 export const BackToTop = ({ children }) => {
   const classes = useStyles()
