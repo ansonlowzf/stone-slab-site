@@ -14,10 +14,10 @@ import { ColourWarning, Hero, Layout, MainCTA, SEO } from "../components"
 const CaesarstoneSlab = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Caesarstone Slab" />
+      <SEO title="Caesarstone Slab Distribution" />
       <Hero
         title="Caesarstone Distributor"
-        subtitle="Supply Caesarstone Slab To Stone Factory &amp; Fabricator"
+        subtitle="Distribute Caesarstone in Malaysia"
         buttonText="Explore"
         toId="colour"
         imageSource={data.calacattaNuvoHero.childImageSharp.fluid}

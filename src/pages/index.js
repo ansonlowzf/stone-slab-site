@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Layout, Hero, MainCTA, SEO, ProductCard } from "../components"
 import {
+  makeStyles,
   Typography,
   Grid,
   Paper,
@@ -11,7 +12,20 @@ import {
 import { graphql } from "gatsby"
 import { ContainterMdMt, ContainterSmMt, H2Title } from "../../elements"
 
+const useStyles = makeStyles(theme => ({
+  videoStyle: {
+    position: `relative`,
+    width: `100%`,
+    height: 500,
+    [theme.breakpoints.down("sm")]: {
+      height: 390,
+    },
+  },
+}))
+
 const Homepage = ({ data }) => {
+  const classes = useStyles()
+
   return (
     <Layout>
       <SEO title="Stone Distributor Malaysia" />
@@ -55,12 +69,8 @@ const Homepage = ({ data }) => {
         <Paper elevation={4}>
           <Grid container justify="center">
             <iframe
-              title="quartz stone slab warehouse walkthrough"
-              style={{
-                position: `relative`,
-                width: `100%`,
-                height: `500px`,
-              }}
+              title="stone distributor warehouse walkthrough"
+              className={classes.videoStyle}
               src="https://www.youtube.com/embed/n_aPfgbuSDA"
               scrolling="no"
               frameBorder="0"
@@ -72,9 +82,9 @@ const Homepage = ({ data }) => {
       </ContainterMdMt>
 
       <ContainterMdMt>
-        <H2Title>Stone</H2Title>
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={4}>
+        <H2Title>Stone Types</H2Title>
+        <Grid container justify="center" spacing={2}>
+          <Grid item xs={12} sm={6} md={4}>
             <ProductCard
               stone="Granite"
               linkURL="/granite-slab"
@@ -83,21 +93,21 @@ const Homepage = ({ data }) => {
               altText="Granite Blue Pearl"
             />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <ProductCard
               stone="Quartz Stone"
               linkURL="/quartz-stone-slab"
               stoneDescription="More than 60 colour to choose from"
-              imgSource={data.bluePearl.childImageSharp.fluid}
+              imgSource={data.q3015.childImageSharp.fluid}
               altText="Quartz Stone"
             />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <ProductCard
               stone="Caesarstone"
               linkURL="/caesarstone-slab"
               stoneDescription="More than 32 colour to choose from"
-              imgSource={data.bluePearl.childImageSharp.fluid}
+              imgSource={data.cs6046.childImageSharp.fluid}
               altText="Caesarstone"
             />
           </Grid>
@@ -123,6 +133,20 @@ export const data = graphql`
       }
     }
     bluePearl: file(relativePath: { eq: "granite/blue-pearl.JPG" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    cs6046: file(relativePath: { eq: "classico-colour/cs6046.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    q3015: file(relativePath: { eq: "oem-qs/Q3015.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

@@ -14,16 +14,16 @@ import Img from "gatsby-image"
 const graniteSlab = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Granite Slab" />
+      <SEO title="Granite Slab Distribution" />
       <Hero
-        title="Granite Slab"
-        subtitle="Supply Granite Slab To Stone Factory &amp; Fabricator"
+        title="Granite Slab Distribution"
+        subtitle="Distribute Granite Slab"
         buttonText="Explore"
         toId="colour"
         imageSource={data.bluepearlHero.childImageSharp.fluid}
       />
       <ContainterLgMt>
-        <H2Title idPath="colour">Colour Options</H2Title>
+        <H2Title idPath="colour">Shades</H2Title>
         <Grid container spacing={2} justify="center">
           <Grid item xs={12} sm={8}>
             <ImageContainer>

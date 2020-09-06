@@ -12,28 +12,31 @@ import {
 import Img from "gatsby-image"
 import { Link } from "gatsby"
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
+const useStyles = makeStyles(theme => ({
   media: {
     height: 140,
+    [theme.breakpoints.down("sm")]: {
+      height: 180,
+    },
   },
   linkStyle: {
     textDecoration: `none`,
   },
-})
+}))
 
 export const ProductCard = ({
   stone,
   stoneDescription,
   imgSource,
   altText,
+  linkURL,
 }) => {
   const classes = useStyles()
 
   return (
-    <Card className={classes.root}>
+    <Card
+    // className={classes.root}
+    >
       <CardActionArea>
         <CardMedia
           component={Img}
@@ -51,7 +54,7 @@ export const ProductCard = ({
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Link to="/granite-slab" className={classes.linkStyle}>
+        <Link to={linkURL} className={classes.linkStyle}>
           <Button size="large" color="primary">
             See Colour
           </Button>
